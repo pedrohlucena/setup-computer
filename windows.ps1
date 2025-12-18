@@ -1,3 +1,7 @@
+###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### EXECUTION
+###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 winget settings --enable InstallerHashOverride
 
 winget install --id Google.Chrome
