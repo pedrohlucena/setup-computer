@@ -70,6 +70,12 @@ function Install-Productivity-Apps {
     winget install --id splode.pomotroid
 }
 
+function Install-Entertainment-Apps {
+    Install-Game-Apps
+
+    winget install --id Spotify.Spotify
+}
+
 function Install-Communication-Apps {
     winget install --id Discord.Discord
     winget install WhatsApp
@@ -92,6 +98,6 @@ Install-Communication-Apps
 Install-Dev-Apps
 Config-Dev-Apps
 
-Install-Game-Apps
+Install-Entertainment-Apps
 
 winget settings --disable InstallerHashOverride
