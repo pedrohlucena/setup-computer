@@ -50,8 +50,14 @@ function Config-Computer-Screens {
     DisplaySwitch.exe /extend
 }
 
+function Config-Screen-Brightness {
+    (Get-CimInstance -Namespace root/WMI -ClassName WmiMonitorBrightnessMethods) |
+    Invoke-CimMethod -MethodName WmiSetBrightness -Arguments @{Brightness=1; Timeout=1}
+}
+
 function Config-Operating-System {
     Config-Computer-Screens
+    Config-Screen-Brightness
     Make-Directories
 }
 
