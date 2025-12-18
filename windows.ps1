@@ -59,10 +59,16 @@ function Config-Screen-Brightness {
     Invoke-CimMethod -MethodName WmiSetBrightness -Arguments @{Brightness=1; Timeout=1}
 }
 
+function Config-Time-Sync {
+    Set-Service w32time -StartupType Automatic
+    w32tm /resync
+}
+
 function Config-Operating-System {
     Config-Computer-Screens
     Config-Screen-Brightness
     Make-Directories
+    Config-Time-Sync
 }
 
 function Install-Productivity-Apps {
