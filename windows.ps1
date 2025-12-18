@@ -2,6 +2,8 @@
 ### VARIABLES
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+$OPERATING_SYSTEM_USER_NAME = "" # ⚠️ REPLACE ⚠️
+
 $GIT_USER_EMAIL = "" # ⚠️ REPLACE ⚠️
 $GIT_USER_NAME = "" # ⚠️ REPLACE ⚠️
 
@@ -36,11 +38,26 @@ function Install-Game-Apps {
     winget install --id Valve.Steam
 }
 
+function Make-Directories {
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\dev"
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\dev\repos"
+
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\vet"
+
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\jogos"
+}
+
+function Config-Operating-System {
+    Make-Directories
+}
+
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### EXECUTION
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 winget settings --enable InstallerHashOverride
+
+Config-Operating-System
 
 Install-Web-Browsers
 
