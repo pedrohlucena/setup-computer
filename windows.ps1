@@ -46,6 +46,10 @@ function Make-Directories {
 
     mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\jogos"
 }
+function Install-Productivity-Apps {
+    winget install --id Flameshot.Flameshot
+    winget install --id splode.pomotroid
+}
 
 function Config-Operating-System {
     Make-Directories
@@ -58,6 +62,8 @@ function Config-Operating-System {
 winget settings --enable InstallerHashOverride
 
 Config-Operating-System
+
+Install-Productivity-Apps
 
 Install-Web-Browsers
 
