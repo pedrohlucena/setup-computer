@@ -1,4 +1,11 @@
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### VARIABLES
+###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+$GIT_USER_EMAIL = "" # ⚠️ REPLACE ⚠️
+$GIT_USER_NAME = "" # ⚠️ REPLACE ⚠️
+
+###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### FUNCTIONS
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -19,6 +26,11 @@ function Install-Dev-Apps {
     winget install --id Hashicorp.Terraform
 }
 
+function Config-Dev-Apps {
+    git config --global user.email $GIT_USER_EMAIL
+    git config --global user.name $GIT_USER_NAME
+}
+
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### EXECUTION
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -27,5 +39,6 @@ winget settings --enable InstallerHashOverride
 
 Install-Web-Browsers
 Install-Dev-Apps
+Config-Dev-Apps
 
 winget settings --disable InstallerHashOverride
