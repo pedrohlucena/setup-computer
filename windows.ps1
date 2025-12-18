@@ -31,6 +31,11 @@ function Config-Dev-Apps {
     git config --global user.name $GIT_USER_NAME
 }
 
+function Install-Game-Apps {
+    winget install --id Discord.Discord
+    winget install --id Valve.Steam
+}
+
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### EXECUTION
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -38,7 +43,10 @@ function Config-Dev-Apps {
 winget settings --enable InstallerHashOverride
 
 Install-Web-Browsers
+
 Install-Dev-Apps
 Config-Dev-Apps
+
+Install-Game-Apps
 
 winget settings --disable InstallerHashOverride
