@@ -34,7 +34,6 @@ function Config-Dev-Apps {
 }
 
 function Install-Game-Apps {
-    winget install --id Discord.Discord
     winget install --id Valve.Steam
 }
 
@@ -46,13 +45,19 @@ function Make-Directories {
 
     mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\jogos"
 }
+
+function Config-Operating-System {
+    Make-Directories
+}
+
 function Install-Productivity-Apps {
     winget install --id Flameshot.Flameshot
     winget install --id splode.pomotroid
 }
 
-function Config-Operating-System {
-    Make-Directories
+function Install-Communication-Apps {
+    winget install --id Discord.Discord
+    winget install WhatsApp
 }
 
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -66,6 +71,8 @@ Config-Operating-System
 Install-Productivity-Apps
 
 Install-Web-Browsers
+
+Install-Communication-Apps
 
 Install-Dev-Apps
 Config-Dev-Apps
