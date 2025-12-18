@@ -81,6 +81,10 @@ function Install-Communication-Apps {
     winget install WhatsApp
 }
 
+function Manual {
+    # [] Pin apps at taskbar
+}
+
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### EXECUTION
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -99,5 +103,7 @@ Install-Dev-Apps
 Config-Dev-Apps
 
 Install-Entertainment-Apps
+
+Manual
 
 winget settings --disable InstallerHashOverride
