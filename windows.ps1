@@ -28,6 +28,8 @@ function Install-Dev-Apps {
     winget install --id Hashicorp.Terraform
 
     winget install "DBeaver CE"
+    
+    winget install --id Postman.Postman
 }
 
 function Config-Dev-Apps {
