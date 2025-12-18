@@ -26,6 +26,8 @@ function Install-Dev-Apps {
     winget install --id Docker.DockerDesktop
     winget install --id Amazon.AWSCLI
     winget install --id Hashicorp.Terraform
+
+    winget install "DBeaver CE"
 }
 
 function Config-Dev-Apps {
