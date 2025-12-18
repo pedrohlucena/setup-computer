@@ -46,7 +46,12 @@ function Make-Directories {
     mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\jogos"
 }
 
+function Config-Computer-Screens {
+    DisplaySwitch.exe /extend
+}
+
 function Config-Operating-System {
+    Config-Computer-Screens
     Make-Directories
 }
 
