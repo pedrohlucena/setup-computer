@@ -91,6 +91,10 @@ function Manual {
     # [] Pin apps at taskbar
 }
 
+function Install-Package-Managers {
+    winget install --id Chocolatey.Chocolatey
+}
+
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ### EXECUTION
 ###━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -98,6 +102,8 @@ function Manual {
 winget settings --enable InstallerHashOverride
 
 Config-Operating-System
+
+Install-Package-Managers
 
 Install-Productivity-Apps
 
