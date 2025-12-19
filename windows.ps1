@@ -88,6 +88,7 @@ function Install-Communication-Apps {
 }
 
 function Manual {
+    # [] Remove all apps from taskbar
     # [] Pin apps at taskbar
 }
 
