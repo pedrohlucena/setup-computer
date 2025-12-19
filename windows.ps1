@@ -90,6 +90,7 @@ function Install-Communication-Apps {
 function Manual {
     # [] Remove all apps from taskbar
     # [] Pin apps at taskbar
+    # [] Add e-mails to web browser
 }
 
 function Install-Package-Managers {
