@@ -68,7 +68,50 @@ function Config-Time-Sync {
     w32tm /resync
 }
 
+function Setup-Startup-Apps {
+    $PATH_OF_STARTUP_FOLDER = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+
+
+    $APPS_TO_CREATE_SHORTCUTS = @(
+        @{
+            PATH_OF_APP   = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+            SHORTCUT_NAME = "chrome.lnk"
+        },
+        @{
+            PATH_OF_APP   = "c:\Program Files\Mozilla Firefox\firefox.exe"
+            SHORTCUT_NAME = "firefox.lnk"
+        },
+        @{
+            PATH_OF_APP   = "C:\Users\$OPERATING_SYSTEM_USER_NAME\AppData\Local\Programs\pomotroid\Pomotroid.exe"
+            SHORTCUT_NAME = "pomotroid.lnk"
+        },
+        @{
+            PATH_OF_APP   = "c:\Users\$OPERATING_SYSTEM_USER_NAME\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+            SHORTCUT_NAME = "code.lnk"
+        },
+        @{
+            PATH_OF_APP   = "c:\windows\system32\Taskmgr.exe"
+            SHORTCUT_NAME = "taskmgr.lnk"
+        },
+        @{
+            PATH_OF_APP   = "c:\Program Files\Docker\Docker\Docker Desktop.exe"
+            SHORTCUT_NAME = "docker.lnk"
+        }
+    )
+
+
+    foreach ($APP_TO_CREATE_SHORTCUT in $APPS_TO_CREATE_SHORTCUTS) {
+        $PATH_TO_CREATE_SHORTCUT = Join-Path $PATH_OF_STARTUP_FOLDER $APP_TO_CREATE_SHORTCUT.SHORTCUT_NAME
+
+        $createdShortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($PATH_TO_CREATE_SHORTCUT)
+        # ---
+        $createdShortcut.TargetPath = $APP_TO_CREATE_SHORTCUT.PATH_OF_APP
+        $createdShortcut.Save()
+    }
+}
+
 function Config-Operating-System {
+    Setup-Startup-Apps
     Config-Computer-Screens
     Config-Screen-Brightness
     Make-Directories
@@ -111,13 +154,13 @@ function Install-Package-Managers {
 
 winget settings --enable InstallerHashOverride
 
+Install-Web-Browsers
+
 Config-Operating-System
 
 Install-Package-Managers
 
 Install-Productivity-Apps
-
-Install-Web-Browsers
 
 Install-Communication-Apps
 
