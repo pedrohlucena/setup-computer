@@ -142,6 +142,7 @@ function Manual {
     # [] Remove all apps from taskbar
     # [] Pin apps at taskbar
     # [] Add e-mails to web browser
+    # [] Config AWS CLI profiles
 }
 
 function Install-Package-Managers {
