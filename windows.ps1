@@ -85,6 +85,11 @@ function Install-Entertainment-Apps {
     winget install --id Spotify.Spotify
 }
 
+function Config-Entertainment-Apps {
+    Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "Spotify"
+    Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "SpotifyLauncher"
+}
+
 function Install-Communication-Apps {
     winget install --id Discord.Discord
     winget install WhatsApp
@@ -120,6 +125,7 @@ Install-Dev-Apps
 Config-Dev-Apps 
 
 Install-Entertainment-Apps
+Config-Entertainment-Apps
 
 Manual
 
