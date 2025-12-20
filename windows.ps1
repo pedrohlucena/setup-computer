@@ -30,11 +30,15 @@ function Install-Dev-Apps {
     winget install "DBeaver CE"
     
     winget install --id Postman.Postman
+
+    winget install --id Ngrok.Ngrok
 }
 
 function Config-Dev-Apps {
     git config --global user.email $GIT_USER_EMAIL
     git config --global user.name $GIT_USER_NAME
+
+    ngrok update
 }
 
 function Install-Game-Apps {
