@@ -107,7 +107,11 @@ function Setup-Startup-Apps {
         # ---
         $createdShortcut.TargetPath = $APP_TO_CREATE_SHORTCUT.PATH_OF_APP
         $createdShortcut.Save()
-    }
+        }
+}
+
+function Config-Clipboard-History {
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Clipboard" -Name "EnableClipboardHistory" -Value 1 -Type DWord
 }
 
 function Config-Operating-System {
@@ -116,6 +120,7 @@ function Config-Operating-System {
     Config-Screen-Brightness
     Make-Directories
     Config-Time-Sync
+    Config-Clipboard-History
 }
 
 function Install-Productivity-Apps {
