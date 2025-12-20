@@ -21,7 +21,7 @@ function Install-Dev-Apps {
     
     winget install --id Microsoft.VisualStudioCode
     
-    winget install --id CoreyButler.NVMforWindows
+    winget install --id CoreyButler.NVMforWindows --version "1.1.12"
 
     winget install --id Docker.DockerDesktop
     winget install --id Amazon.AWSCLI
@@ -114,7 +114,7 @@ Install-Web-Browsers
 Install-Communication-Apps
 
 Install-Dev-Apps
-Config-Dev-Apps
+Config-Dev-Apps 
 
 Install-Entertainment-Apps
 
