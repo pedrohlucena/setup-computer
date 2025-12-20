@@ -32,6 +32,8 @@ function Install-Dev-Apps {
     winget install --id Postman.Postman
 
     winget install --id Ngrok.Ngrok
+
+    winget install --id Kubernetes.kubectl
 }
 
 function Config-Dev-Apps {
