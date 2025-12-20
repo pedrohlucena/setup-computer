@@ -72,7 +72,6 @@ function Config-Operating-System {
 }
 
 function Install-Productivity-Apps {
-    winget install --id Flameshot.Flameshot
     winget install --id splode.pomotroid
 }
 
