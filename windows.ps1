@@ -143,6 +143,7 @@ function Manual {
     # [] Pin apps at taskbar
     # [] Add e-mails to web browser
     # [] Config AWS CLI profiles
+    # [] Config SSH to Github connection (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
 }
 
 function Install-Package-Managers {
