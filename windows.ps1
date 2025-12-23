@@ -157,6 +157,7 @@ function Manual {
     # [] Config AWS CLI profiles
     # [] Config SSH to Github connection (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
     # Config Windows Hello
+    # Enable "sudo" on Sistema > Avançado > Habilitar sudo
 }
 
 function Install-Package-Managers {
