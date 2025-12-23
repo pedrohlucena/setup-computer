@@ -34,6 +34,8 @@ function Install-Dev-Apps {
     winget install --id Ngrok.Ngrok
 
     winget install --id Kubernetes.kubectl
+
+    Install-Module posh-git -Scope CurrentUser -Force
 }
 
 function Config-Dev-Apps {
@@ -41,6 +43,9 @@ function Config-Dev-Apps {
     git config --global user.name $GIT_USER_NAME
 
     ngrok update
+
+    Import-Module posh-git
+    Add-PoshGitToProfile
 }
 
 function Install-Game-Apps {
