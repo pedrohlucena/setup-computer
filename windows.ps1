@@ -140,6 +140,7 @@ function Config-Operating-System {
 }
 
 function Install-Productivity-Apps {
+    winget install OBSProject.OBSStudio
     winget install --id splode.pomotroid
 }
 
