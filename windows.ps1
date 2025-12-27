@@ -121,6 +121,12 @@ function Config-Clipboard-History {
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Clipboard" -Name "EnableClipboardHistory" -Value 1 -Type DWord
 }
 
+function Uninstall-Microsoft-Copilot {
+    
+    Get-AppxPackage *Microsoft.Copilot* | Remove-AppxPackage
+    winget uninstall "Microsoft 365 Copilot"
+}
+
 function Config-Operating-System {
     Setup-Startup-Apps
     Config-Computer-Screens
@@ -128,6 +134,7 @@ function Config-Operating-System {
     Make-Directories
     Config-Time-Sync
     Config-Clipboard-History
+    Uninstall-Microsoft-Copilot
 }
 
 function Install-Productivity-Apps {
