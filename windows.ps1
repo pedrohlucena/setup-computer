@@ -53,12 +53,14 @@ function Install-Game-Apps {
 }
 
 function Make-Directories {
-    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\dev"
-    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\dev\repos"
+"C:\Users\pedro"
 
-    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\vet"
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\dev"
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\dev\repos"
 
-    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\OneDrive\Desktop\jogos"
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\vet"
+
+    mkdir "C:\Users\$OPERATING_SYSTEM_USER_NAME\jogos"
 }
 
 function Config-Computer-Screens {
